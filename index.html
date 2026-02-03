@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitaliz has moved</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .minimal-btn {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .minimal-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .minimal-btn:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center justify-center min-h-screen p-6 text-slate-900 selection:bg-indigo-50 selection:text-indigo-900">
+
+    <main class="max-w-md w-full text-center md:text-left">
+        
+        <!-- Subtle Brand/Divider -->
+        <div class="h-px w-8 bg-indigo-600 mb-12 mx-auto md:mx-0 fade-in-up"></div>
+
+        <h1 class="text-4xl md:text-5xl font-light tracking-tight mb-8 fade-in-up delay-100">
+            We have moved.
+        </h1>
+
+        <div class="space-y-6 text-lg font-light text-slate-500 leading-relaxed fade-in-up delay-200">
+            <p>
+                The digital home of <strong class="font-medium text-indigo-600">Digitaliz</strong> has migrated to a new domain.
+            </p>
+            <p>
+                We are continuing to craft robust software solutions and digital experiences at our new address.
+            </p>
+        </div>
+
+        <div class="mt-12 fade-in-up delay-300">
+            <a href="https://digitaliz.id" class="minimal-btn inline-flex items-center gap-2 text-indigo-600 font-medium group">
+                Visit digitaliz.id
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Essential Footer info, kept extremely minimal -->
+    <footer class="fixed bottom-8 text-xs text-slate-300 font-light fade-in-up delay-300">
+        digitaliz.net &mdash; deprecated
+    </footer>
+
+</body>
+</html>
